@@ -7,7 +7,14 @@ import db from "./_db.js";
   const resolvers = {
     Query: {
       writers: () => db.writers,
-      writer: (_, { id }) => db.writers.find(writer => writer.id === id),
+      //writer: (_, { id }) => db.writers.find(writer => writer.id === id),
+      writer: (_, { id }) => {
+        const writer = db.writers.find(writer => writer.id === id);
+        if (!writer) {
+          throw new Error('Author not found');
+        }
+        return writer;
+      },
       books: () => db.books,
       book: (_, { id }) => db.books.find(book => book.id === id),
       comments: () => db.comments,

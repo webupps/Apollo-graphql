@@ -19,6 +19,12 @@ type Comment {
   book: Book!
 }
 
+type Mutation {
+  createWriter(name: String!, email: String!): Writer!
+  createBook(authorId: ID!, title: String!): Book!
+  createComment(bookId: ID!, content: String!): Comment!
+}
+
 type Query {
   writers: [Writer!]!
   writer(id: Int): Writer
@@ -26,5 +32,10 @@ type Query {
   book(id: Int): Book
   comments: [Comment!]!
   comment(id: Int): Comment
+}
+
+schema {
+  query: Query
+  mutation: Mutation
 }
 `;

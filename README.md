@@ -1,5 +1,5 @@
 # The Art of Software in Action - GraphQL
-Free Demo project for GraphQL
+Free Demo project of GraphQL
 
 ## Requirements 
 Node Version
