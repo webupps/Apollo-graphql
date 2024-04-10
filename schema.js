@@ -3,7 +3,7 @@ type Writer {
   id: ID!
   name: String!
   email: String!
-  book: [Book]!
+  books: [Book]!
 }
 
 type Book {
@@ -21,10 +21,10 @@ type Comment {
 
 type Query {
   writers: [Writer!]!
-  writer(id: ID!): Writer
+  writer(id: Int): Writer
   books: [Book!]!
-  book(id: ID!): Book
+  book(id: Int): Book
   comments: [Comment!]!
-  comment(id: ID!): Comment
+  comment(id: Int): Comment
 }
 `;

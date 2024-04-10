@@ -6,10 +6,23 @@ import db from "./_db.js";
 
   const resolvers = {
     Query: {
-      books: () => db.books,
       writers: () => db.writers,
-      comments: () => db.comments
+      writer: (_, { id }) => db.writers.find(writer => writer.id === id),
+      books: () => db.books,
+      book: (_, { id }) => db.books.find(book => book.id === id),
+      comments: () => db.comments,
+      comment: (_, { id }) => db.comments.find(comment => comment.id === id),
     },
+    Writer: {
+      books: (writer) => {
+        return db.books.filter((book) => book.author === writer.id);
+      },
+    },
+    Book: {
+      comments: (book) => {
+        return db.comments.filter((comment) => comment.book === book.id);
+      },
+    }
   };
 
   // The ApolloServer constructor requires two parameters: your schema

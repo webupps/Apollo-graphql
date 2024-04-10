@@ -12,10 +12,73 @@ Install Nodemon: ``` npm install -g nodemon ```
 
 
 ### Run from the folder:
+
+  Example Query 1
 ``` 
-query ExampleQuery {
-  books {
+ query GetAllBooksWritersComments {
+  writers {
+    name
+    books {
+      title
+      id
+      comments {
+        content
+      }
+    }
+  }
+}
+ ```
+   Example Query 2
+``` 
+ query GetWriterByID {
+  writer(id: 1) {
+    name
+    email
+    books {
+      title
+      comments {
+        content
+      }
+    }
+  }
+}
+ ```
+Example Query 3
+``` 
+query GetAllBooksandComment {
+   books {
+    title
+    id
+    comments {
+      content
+      id
+    }
+  }
+}
+ ```
+Example Query 4
+``` 
+query GetBookbyID {
+   book(id: 1)  {
     title
   }
 }
+ ```
+Example Query 5
+``` 
+query GetAllComments {
+   comments {
+    content
+    id
+  }
+}
+ ```
+Example Query 6
+``` 
+query GetCommentByID {
+   comment(id:1) {
+    content
+  }
+}
+
  ```

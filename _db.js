@@ -1,3 +1,4 @@
+
 const books = [
     {
       id: 1,
@@ -8,7 +9,7 @@ const books = [
     {
       id: 2,
       title: 'City of Glass',
-      author: 'Paul Auster',
+      author: 2,
       comments: [2]
     },
   ];
@@ -18,13 +19,13 @@ const books = [
       id: 1,
       name: 'Kate Chopin',
       email: 'kchopin@email.com',
-      book: [1]
+      books: [1]
     },
     {
       id: 2,
       name: 'Paul Auster',
       email: 'pauster@email.com',
-      book: [2]
+      books: [2]
     },
   ];
 
@@ -40,6 +41,8 @@ const books = [
       book: 2
     },
   ];
+
+
 
   
   export default { books, writers, comments }
