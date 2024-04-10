@@ -7,6 +7,8 @@ import db from "./_db.js";
   const resolvers = {
     Query: {
       books: () => db.books,
+      writers: () => db.writers,
+      comments: () => db.comments
     },
   };
 
